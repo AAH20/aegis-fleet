@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  aegis-fleet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegis-fleet-core
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AEGIS_FLEET_ENV=production
+    volumes:
+      - aegis-blackbox-data:/app/data
+    restart: unless-stopped
+    command: ["simulate", "--vehicle", "drone"]
+
+volumes:
+  aegis-blackbox-data:
+    driver: local

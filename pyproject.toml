@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-fleet"
+version = "0.1.0"
+description = "Autonomous Fleet Black-Box, GRC Assurance Spine & Mission Forensics Plane for Drones and Autonomous Vehicles."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Ahmed Hassan", email = "developer@a2zsoc.com"}
+]
+keywords = [
+    "autonomous-vehicles",
+    "drones",
+    "px4",
+    "ardupilot",
+    "openpilot",
+    "mavlink",
+    "can-bus",
+    "robot-black-box",
+    "grc",
+    "faa-part-107",
+    "iso-26262",
+    "eu-ai-act",
+    "vla",
+    "forensics",
+    "swarm-intelligence"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0"
+]
+
+[project.scripts]
+aegis-fleet = "aegis_fleet.cli:main"
